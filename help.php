@@ -9,15 +9,16 @@ if (isset($_REQUEST["help"])){
 
     <div class="container-fluid">
       <div class="row-fluid">
+    
         <!-- sidebar -->
-        <div class="span2">
+        <div class="span3">
           <?php include "elements/sidebar.php"?>
         </div><!--/span-->
-
+    
         <!-- main -->
-        <div class="span10">
+        <div class="span9">
         <?php if($help_help){ ?>
-         <?php echo $help_help->html;
+         <?php echo $help_help->html();
                $time = date("Y-m-d H:i:s",$help->atime);
                echo "<div><pre>最終更新:{$time}</pre></div>";
          ?>
@@ -30,6 +31,7 @@ if (isset($_REQUEST["help"])){
           </ul>
         <?php } ?>
         </div><!--/span-->
+            
       </div><!--/row-->
                                 
 <?php include "elements/footer.php";?>      

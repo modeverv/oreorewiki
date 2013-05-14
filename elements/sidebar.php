@@ -3,8 +3,6 @@ require_once dirname(dirname(__FILE__)) . "/lib/lib.php";
 //画面高さ調整
 $hcount = 0;
 ?>
-<div data-spy="affix" data-offset-bottom="200">
-
 <div class="well sidebar-nav">
   <ul class="nav nav-list">
     <li><a href="./">トップページ</a></li>
@@ -22,7 +20,6 @@ $hcount = 0;
 </div><!--/.well -->
 
     
-</div>                                                 
 <style>
   .row-fluid { min-height:<?php echo (380 + 20 * $hcount );?>px }
 </style>  

@@ -35,7 +35,6 @@ use \Michelf\Markdown;
 class Help {
 
     public $filename;
-    public $html;
     public $text;
     public $title;
 
@@ -47,11 +46,12 @@ class Help {
         
         $this->filename = $filename;
         $this->text = file_get_contents($filename);
-        $this->html = Markdown::defaultTransform($this->text);
         $texta = explode("\n",$this->text);
         $this->title = str_replace(" ","",str_replace("　","",(str_replace("#","",$texta[0]))));
         $this->atime = fileatime($filename);
-        
+    }
+    public function html(){
+        return Markdown::defaultTransform($this->text);
     }
 }
 

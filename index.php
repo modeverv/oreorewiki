@@ -6,13 +6,14 @@ require_once "lib/lib.php";
 
     <div class="container-fluid">
       <div class="row-fluid">
+    
         <!-- sidebar -->
-        <div class="span2">
+        <div class="span3">
           <?php include "elements/sidebar.php"?>
         </div><!--/span-->
-    
+   
         <!-- main -->
-        <div class="span10">
+        <div class="span9">
         <?php if(count($errors)>0){?>
         <div class="alert alert-error">
           <?php foreach($errors as $e){echo "<div>{$e}</div>";} ?>
@@ -29,6 +30,8 @@ require_once "lib/lib.php";
         </div>
                                 
         </div><!--/span-->
+              
+              
       </div><!--/row-->
                                 
 <?php include "elements/footer.php";?>      
