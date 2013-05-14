@@ -14,7 +14,7 @@ $hcount = 0;
     
 <div class="well sidebar-nav">
   <ul class="nav nav-list">
-    <li class="nav-header">ヘルプ</li>
+    <li class="nav-header">一覧</li>
     <?php foreach (Helps::$helps as $help) { $hcount++ ?>
     <li><a href="help.php?help=<?php echo $help->title;?>"><?php echo $help->title;?></a></li> 
     <?php } ?>
