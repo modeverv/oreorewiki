@@ -1,0 +1,4 @@
+.DS_Store
+log/application.log
+db/*.sql
+csv/*.csv
