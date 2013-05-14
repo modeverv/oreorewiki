@@ -54,8 +54,8 @@ function insertBR( $str, $n, $enc='UTF8' ){
 <div class="well sidebar-nav">
   <ul class="nav nav-list">
     <li class="nav-header">コンテンツ</li>
-    <?php foreach (Helps::$helps as $help) { $hcount++ ?>
-    <li><a href="help.php?help=<?php echo $help->title;?>"><?php echo $help->title ?></a></li> 
+    <?php foreach (Helps::$helps as $help) { $hcount++ ;  $h = urlencode($help->title);?>
+    <li><a href="help.php?help=<?php echo $h;?>"><?php echo $help->title ?></a></li> 
     <?php } ?>
   </ul>
 </div><!--/.well -->

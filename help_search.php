@@ -7,7 +7,8 @@ if(!isset($_REQUEST['query'])){
     exit;
 }
 
-exec("find help -name \*\.\* -type f -print | xargs grep -nH -e \"{$_REQUEST['query']}\"",$output);
+//exec("find help -name \*\.\* -type f -print | xargs grep -nH -e \"{$_REQUEST['query']}\"",$output);
+exec("find help -name \"*.md\" -type f -print | xargs grep -nH -e \"{$_REQUEST['query']}\"",$output);
 ?>
 <?php include "elements/header.php"; ?>
 
@@ -25,14 +26,15 @@ exec("find help -name \*\.\* -type f -print | xargs grep -nH -e \"{$_REQUEST['qu
           <?php if(count($output)==0){ ?>
           <p>検索結果はありません。</p>
           <?php }else{ ?>
-          <ul>             
+          <ul style="list-style-position:inside;">             
             <?php foreach($output as $line){?>
               <?php
                  $a = explode(":",$line);
                  $help = Helps::getHelpByFileName(dirname(__FILE__)."/".$a[0]);
                  $highlight = str_replace($_REQUEST['query'],"<span style='background:yellow;'>{$_REQUEST['query']}</span>",$a[2]);
                  if($help){
-                   echo "<li><a href=\"help.php?help={$help->title}\">{$help->title}</a><br/>{$highlight}</li>";
+                   $h = urlencode($help->title);
+                   echo "<li><a href=\"help.php?help={$h}\">{$help->title}</a><br/>{$highlight}</li>";
                  }
               ?>
             <?php }?>
