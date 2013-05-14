@@ -7,7 +7,7 @@ if(!isset($_REQUEST['query'])){
     exit;
 }
 
-exec("find help -name \*\.\md -type f -print | xargs grep -nH -e \"{$_REQUEST['query']}\"",$output);
+exec("find help -name \*\.\* -type f -print | xargs grep -nH -e \"{$_REQUEST['query']}\"",$output);
 ?>
 <?php include "elements/header.php"; ?>
 

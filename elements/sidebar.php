@@ -16,7 +16,7 @@ $hcount = 0;
   </ul>  
   <form class="form" action="help_search.php" style="margin-bottom:0px;">
     <div class="input-append">
-      <input name="query" type="text" style="margin-left:10px;color:#222;" class="span2">
+      <input value="<?php echo $_REQUEST['query']?>" name="query" type="text" style="margin-left:10px;color:#222;" class="span2">
       <button type="submit" class="btn">検索</button>
     </div>
   </form>            
