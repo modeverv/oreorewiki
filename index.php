@@ -29,8 +29,7 @@ require_once "lib/lib.php";
           </div>
         </div>
                                 
-        </div><!--/span-->
-              
+        </div><!--/span-->              
               
       </div><!--/row-->
                                 

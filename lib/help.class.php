@@ -24,6 +24,18 @@ class Helps {
         }
         return false;
     }
+    /**
+     * タイトルでヘルプを探す
+     */
+    public static function getHelpByFileName($filename){
+        foreach(Helps::$helps as $help){
+            if($filename == $help->filename){
+                return $help;
+            }
+        }
+        return false;
+    }
+    
 }
 use \Michelf\Markdown;
 
