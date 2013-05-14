@@ -8,6 +8,7 @@ $hcount = 0;
 <div class="well sidebar-nav">
   <ul class="nav nav-list">
     <li><a href="./">トップページ</a></li>
+    <li><a href="./help_all.php" target="_blank">全ページ出力</a></li>
   </ul>
 </div><!--/.well -->
     
