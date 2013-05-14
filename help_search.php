@@ -21,7 +21,7 @@ exec("find help -name \*\.\* -type f -print | xargs grep -nH -e \"{$_REQUEST['qu
     
         <!-- main -->
         <div class="span9">
-          <h1>検索</h1>
+          <h1>検索結果</h1>
           <?php if(count($output)==0){ ?>
           <p>検索結果はありません。</p>
           <?php }else{ ?>
