@@ -7,8 +7,13 @@ if(!isset($_REQUEST['query'])){
     exit;
 }
 
-//exec("find help -name \*\.\* -type f -print | xargs grep -nH -e \"{$_REQUEST['query']}\"",$output);
-exec("find help -name \"*.md\" -type f -print | xargs grep -nH -e \"{$_REQUEST['query']}\"",$output);
+$query = escapeshellcmd($_REQUEST['query']);
+
+$command = "find help -name \"*.md\" -type f -print | xargs grep -nH -e '{$query}' ";
+var_dump($command);
+
+exec($command,$output);
+
 ?>
 <?php include "elements/header.php"; ?>
 
