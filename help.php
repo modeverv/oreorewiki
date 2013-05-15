@@ -24,7 +24,7 @@ if (isset($_REQUEST["help"])){
          ?>
         <?php  } else { ?>
           <ul class="nav nav-list">
-            <li class="nav-header">ヘルプ</li>
+            <li class="nav-header">ドキュメント一覧</li>
             <?php foreach (Helps::$helps as $h) {?>
             <li><a href="help.php?help=<?php echo $h->title;?>"><?php echo $h->title;?></a></li>
             <?php } ?>
