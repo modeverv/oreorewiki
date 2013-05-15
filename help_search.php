@@ -10,7 +10,10 @@ if(!isset($_REQUEST['query'])){
 $query = escapeshellcmd($_REQUEST['query']);
 
 $command = "find help -name \"*.md\" -type f -print | xargs grep -nH -e '{$query}' ";
-var_dump($command);
+// 脆弱性について
+//`rm -fr ~/tmp/*` => find help -name "*.md" -type f -print | xargs grep -nH -e '\`rm -fr \~/tmp/\*\`'
+// で確認。
+//var_dump($command);
 
 exec($command,$output);
 
